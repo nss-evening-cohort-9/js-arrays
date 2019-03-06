@@ -33,8 +33,67 @@ const buildDinosaurs = () => {
   printToDom('dino-barn', domString)
 };
 
+const assignments = [
+  {
+    title: 'product cards',
+    dueDate: '03/05/2019',
+    topic: 'HTML/CSS',
+    notes: 'Use flexbox',
+    assignmentUrl: 'http://www.google.com',
+  },
+  {
+    title: 'product cards2',
+    dueDate: '03/05/2019',
+    topic: 'HTML/CSS',
+    notes: 'Use flexbox',
+    assignmentUrl: 'http://www.google.com',
+  },
+  {
+    title: 'product cards3',
+    dueDate: '03/05/2019',
+    topic: 'HTML/CSS',
+    notes: 'Use flexbox',
+    assignmentUrl: 'http://www.google.com',
+  },
+  {
+    title: 'product cards4',
+    dueDate: '03/05/2019',
+    topic: 'HTML/CSS',
+    notes: 'Use flexbox',
+    assignmentUrl: 'http://www.google.com',
+  },
+  {
+    title: 'product cards5',
+    dueDate: '03/05/2019',
+    topic: 'HTML/CSS',
+    notes: 'Use flexbox',
+    assignmentUrl: 'http://www.google.com',
+  }
+];
+
+// total of 5 assignments
+// buildAssignmentCards - loop over assignments and make a domString
+// reuse the printToDom function to display the domString
+
+const buildAssignmentCards = () => {
+  let domString = '';
+  for(let j = 0; j < assignments.length; j++) {
+    domString += `<div class="assignment">`
+    domString +=   `<div class="assignment-title">${assignments[j].title}</div>`;
+    domString +=   `<strong>Due Date: ${assignments[j].dueDate}</strong>`
+    domString +=   `<div>Get the assignment <a href=${assignments[j].assignmentUrl}>HERE</a></div>`
+    domString +=   `<div>Topic: ${assignments[j].topic}</div>`
+    domString +=   `<div>Notes: ${assignments[j].notes}</div>`
+    domString += `</div>`
+  }
+
+  printToDom('assignments', domString)
+};
+
+
 const init = () => {
   buildDinosaurs();
+  buildAssignmentCards();
 };
 
 init();
